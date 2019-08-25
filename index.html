@@ -63,7 +63,8 @@ margin-right: 15px;
 <a class="change-lang" href="javascript:void(0)" onclick="changeLanguage('en')">English</a>
 / <a class="change-lang" href="javascript:void(0)" onclick="changeLanguage('fi')">Suomi</a>
 <h1 data-t="otsikko">Sellisti Vertti Viitasaari</h1>
-<div id="teksti" data-t="teksti">Laitathan Javascriptin päälle saadaksesi eniten irti vierailustasi!</div>
+<div id="teksti" data-t="teksti"></div>
+<noscript>Laitathan Javascriptin päälle saadaksesi eniten irti vierailustasi! / Please enable Javascript to get most out of your visit!</noscript>
 <a class="big-link" href="cv.html" target="_blank">CV</a>
 <p>
 📧&nbsp;&nbsp;<a class="big-link" href="mailto:viitasaari.vertti@gmail.com">viitasaari.vertti@gmail.com</a> / ☎&nbsp;&nbsp;<a class="big-link" href="tel:0503453950">050 345 3950</a>
@@ -78,6 +79,7 @@ margin-right: 15px;
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   var ytVidDimensions = {width: 320, height: 180}
+  var currentLang = 'fi'
 
   var vidLinks = [
   'https://www.youtube.com/watch?v=TsHgMeHFfpM',
@@ -109,7 +111,7 @@ margin-right: 15px;
 		parent.appendChild(description)
 	})
 	
-	changeLanguage('fi')
+	changeLanguage(currentLang)
   }
   
   var t = {
@@ -127,6 +129,7 @@ margin-right: 15px;
   }
   
   function changeLanguage(language) {
+    currentLang = language
     document.querySelectorAll('[data-t]').forEach(function(el) {
 		var transKey = el.getAttribute('data-t')
 		if (translators[transKey]) {
@@ -208,6 +211,7 @@ margin-right: 15px;
 	parent.innerHTML = html
   }
   
+  changeLanguage(currentLang)
 </script>
 </div>
 </div>
