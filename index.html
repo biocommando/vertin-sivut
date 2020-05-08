@@ -86,7 +86,9 @@ margin-right: 15px;
   'https://www.youtube.com/watch?v=TsHgMeHFfpM',
   'https://www.youtube.com/watch?v=FQYmHveXOCM',
   'https://www.youtube.com/watch?v=5aj_MreP944',
-  'https://www.youtube.com/watch?v=pUZ1coqSBAc']
+  'https://www.youtube.com/watch?v=pUZ1coqSBAc',
+  'https://www.youtube.com/watch?v=HGYlTRTMThE',
+  'https://www.youtube.com/watch?v=5o6nybdaaow']
   // Replace the 'ytplayer' element with an <iframe> and
   // YouTube player after the API code downloads.
   var player;
@@ -123,6 +125,10 @@ margin-right: 15px;
 	link_2: {fi: 'Jousitrio Lilja soittaa Prokofjevia 08/2018', en: 'String trio Lilja plays Prokofiev 08/2018'},
 	link_3: {fi: 'Duo Kaasinen & Viitasaari soittamassa Coldplayn Viva la Vida -sovitusta 11/2018',
 			 en: 'Duo Kaasinen & Viitasaari plays their version of Viva la Vida by Coldplay 11/2018'},
+    link_4: {fi: 'Duo Kaasinen & Viitasaari soittaa Pirates of the Caribbean -sovitusta 02/2020',
+             en: 'Duo Kaasinen & Viitasaari plays their version of Pirates of the Caribbean 02/2020'},
+    link_5: {fi: 'Duo Kaasinen & Viitasaari soittaa Mia and Sebastian\'s -teeman sovitusta 02/2020',
+             en: 'Duo Kaasinen & Viitasaari plays their version of Mia and Sebastian\'s Theme 02/2020'},
 	cv: {fi: 'CV', en: 'CV (in Finnish)'}
   }
   
@@ -149,47 +155,29 @@ margin-right: 15px;
 	'Tervetuloa kotisivuilleni. Olen Vertti Viitasaari, 27-vuotias musiikkipedagogi ja sellisti Tampereella. Teen keikkoja erilaisiin tilaisuuksiin niin yksin sellolla soittaen kuin myös isompien kokoonpanojen kanssa. Onnistuvat kokoonpanot ovat muun muassa seuraavat ja aina voit esittää toiveita:\n' + 
 	'-html-\n'+
 	'<ul>' +
-	'<li>Jousitrio</li>' + 
-	'<li>Jousikvartetti</li>' + 
 	'<li>Selloduo</li>' + 
 	'<li>Sello ja piano</li>' + 
+	'<li>Jousitrio</li>' + 
+	'<li>Jousikvartetti</li>' + 
 	'</ul>\n' +
 	'-html-\n'+
-	'Musiikin hinnoittelu 5 kilometrin säteellä Tampereen keskustasta menee seuraavasti:\n' + 
-	'-html-\n'+
-	'<ul>'+
-	'<li><span class="fixed-width">20 minuuttia soittoa</span> 150e per soittaja</li>' + 
-	'<li><span class="fixed-width">20-60 minuuttia soittoa</span> 200e per soittaja</li>' + 
-	'<li><span class="fixed-width">60-120 minuuttia soittoa</span> 250e per soittaja</li>' + 
-	'</ul>\n'+
-	'-html-\n'+
-	'Yli 5 kilometrin säteellä Tampereen keskustasta olevista keikoista räätälöin hinnan tapauskohtaisesti ja niistä veloitan myös matkakulut bussilippujen tai todellisen bensankulutuksen mukaan. Voin laskuttaa kaikesta työstä Y-tunnuksellani.\n' + 
-	'Ohjelmistoni/ohjelmistomme koostuu monipuolisesti rakastetuista klassisen ja kevyen musiikin kappaleista ja periaatteessa mikä tahansa kappale saadaan onnistumaan, kun ajoissa tutkii sovituksia tai tekee sovituksen. Soittamaan voit pyytää minua mitä erilaisempiin ja tavallisimpaan tilaisuuksiin aina häistä ja hautajaisista vuosijuhliin ja seminaaritilaisuuksien avauksiin.\n' + 
-	'Keikkailun lisäksi opetan sellon- ja pianonsoittoa. Valmistuin keväällä 2019 musiikkipedagogiksi Tampereen ammattikorkeakoulusta. Olen opiskellut myös pianonsoittoa 12-vuotiaasta asti ja tarjoan sello- ja pianotunteja Tampereen seudulla. Kuljen kohtuulliset välimatkat opetettavan luo polkupyörällä, mutta pääsääntöisesti opetan omakotitalossani Tampereen Pappilassa. Minulla on usean vuoden kokemus 6&mdash;65 -vuotiaiden ihmisten opettamisesta.\n' + 
+	'Ohjelmistoni/ohjelmistomme koostuu monipuolisesti rakastetuista klassisen ja kevyen musiikin kappaleista ja voit esittää myös mitä tahansa kappaletoiveita. Soittamaan voit pyytää minua kaikenlaisiin tilaisuuksiin aina häistä ja hautajaisista vuosijuhliin ja seminaaritilaisuuksien avauksiin. Keikoista laskutan Y-tunnuksellani.\n' + 
+	'Keikkailun lisäksi opetan sellon- ja pianonsoittoa. Valmistuin keväällä 2019 musiikkipedagogiksi Tampereen ammattikorkeakoulusta ja tarjoankin sello- ja pianotunteja Tampereen seudulla. Kuljen kohtuulliset välimatkat opetettavan luo polkupyörällä, mutta pääsääntöisesti opetan omakotitalossani Tampereen Pappilassa. Minulla on usean vuoden kokemus 6—65 -vuotiaiden ihmisten opettamisesta.\n' + 
 	'Soittotuntien hinta on 28 euroa 45 minuutilta ja pidemmissä soittotunneissa minuuttiveloitus pienenee suhteellisesti.\n' + 
-	'Hallitsen myös sähköbasson soiton ja olen vuodesta 2014 asti soittanut Hallava-nimisessä rock-bändissä. (<a href="http://hallava.com" target="_blank">hallava.com</a>). Voin siis tehdä sijaistuskeikkaa rock-bändeissä. Akustisella kitaralla hallitsen lisäksi sujuvasti soinnuista säestämisen ja laulan vahvasti.',
+	'Hallitsen myös sähköbasson soiton ja olen vuodesta 2014 asti soittanut Hallava-nimisessä rock-bändissä (<a href="http://hallava.com" target="_blank">hallava.com</a>). Voin siis tehdä sijaistuskeikkaa rock-bändeissä. Akustisella kitaralla hallitsen lisäksi sujuvasti soinnuista säestämisen ja laulan vahvasti.',
 	en: 'Hi!\n' +
-	'And welcome to my website. I am Vertti Viitasaari, 27 years old music educator and cellist in Tampere. I can play in various events with my cello alone and with bigger assemblies. Assemblies I can gather together are, inter alia, following ones and you can always tell me your wishes:\n' +
+	'And welcome to my website. I am Vertti Viitasaari, a 27 years old music educator and cellist from Tampere. You can ask me for a gig to various kinds of events. I can either come alone just with my cello or as a part of a larger assembly. You can request at least one of the following types of assemblies but I am always open to other suggestions as well:\n' +
 	'-html-\n'+
 	'<ul>' +
-	'<li>String trio</li>' + 
-	'<li>String quartet</li>' + 
 	'<li>Cello duo</li>' + 
 	'<li>Cello and piano</li>' + 
+	'<li>String trio</li>' + 
+	'<li>String quartet</li>' + 
 	'</ul>\n' +
 	'-html-\n'+
-	'My prices for playing in a place located within 5 kilometers from Tampere downtown are:\n' + 
-	'-html-\n'+
-	'<ul>'+
-	'<li><span class="fixed-width">20 minutes</span> 150e per player</li>' + 
-	'<li><span class="fixed-width">20-60 minutes</span> 200e per player</li>' + 
-	'<li><span class="fixed-width">60-120 minutes</span> 250e per player</li>' + 
-	'</ul>\n'+
-	'-html-\n'+
-	'Gigs located farther than 5 kilometers from Tampere downtown are charged with a customized price and for those gigs travelling expenses are also charged. Billing can be sorted with my business ID.\n' +
-	'My/our repertoire is versatile consisting of commonly loved classical music and pop music songs. We can play almost any song of your wishes if we are able to find or make an arrangement. You can ask me to play in any possible circumstance from funerals to birthday parties or seminar opening ceremonies.\n' +
-	'I also teach playing cello and piano. I graduated from Tampere University of Applied Sciences in Music degree programme in spring 2019 as a Music Educator. I have also studied playing piano since I was 12 years old and I offer cello and piano lessons in the area of Tampere. I teach in my house in Pappila, Tampere and I can also bicycle to students home if located at a reasonable distance. I have many years of experience of teaching people from small children to pensioners.\n' +
-	'The price of playing lessons is 28 euros per 45 minutes.\n' +
+	'My/our repertoire is versatile, consisting of some of the most beloved classical pieces and pop songs but we are open to any suggestions as well. You can ask me to play in any kinds of events ranging from funerals to birthday parties and seminar opening ceremonies. Billing of the gigs will be sorted out using my business ID.\n' +
+	'I also offer cello and piano lessons in Tampere area. I teach at my home (a detached house) in Pappila, Tampere for the most of the time but I can also use a bicycle to get to the students if they are located at a reasonable distance. I have, in addition to my degree in Music Pedagogue (Tampere University of Applied Sciences, 2019), many years of experience in teaching people of all ages ranging from small children to elderly people.\n' +
+	'For cello and piano lessons I charge 28 euros per 45 minutes. If you want to have a longer session the per-minute rate will get smaller the longer the session is.\n' +
 	'I also play electric bass and I have been playing in a rock band called Hallava (<a href="http://hallava.com" target="_blank">hallava.com</a>) since 2014. I can also accompany with acoustic guitar and I sing powerfully.'
   
   }
