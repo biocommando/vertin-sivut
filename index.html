@@ -88,7 +88,8 @@ margin-right: 15px;
   'https://www.youtube.com/watch?v=5aj_MreP944',
   'https://www.youtube.com/watch?v=pUZ1coqSBAc',
   'https://www.youtube.com/watch?v=HGYlTRTMThE',
-  'https://www.youtube.com/watch?v=5o6nybdaaow']
+  'https://www.youtube.com/watch?v=5o6nybdaaow',
+  'https://www.youtube.com/watch?v=P9gQWdLHtcg']
   // Replace the 'ytplayer' element with an <iframe> and
   // YouTube player after the API code downloads.
   var player;
@@ -129,6 +130,7 @@ margin-right: 15px;
              en: 'Duo Kaasinen & Viitasaari plays their version of Pirates of the Caribbean 02/2020'},
     link_5: {fi: 'Duo Kaasinen & Viitasaari soittaa Mia and Sebastian\'s -teeman sovitusta 02/2020',
              en: 'Duo Kaasinen & Viitasaari plays their version of Mia and Sebastian\'s Theme 02/2020'},
+    link_6: {fi: 'V&V Project - Starlight (Muse Cover)', en: 'V&V Project - Starlight (Muse Cover)'},
 	cv: {fi: 'CV', en: 'CV (in Finnish)'}
   }
   
@@ -152,29 +154,25 @@ margin-right: 15px;
   
   var content = {
 	fi: 'Hei!\n' +
-	'Tervetuloa kotisivuilleni. Olen Vertti Viitasaari, 27-vuotias musiikkipedagogi ja sellisti Tampereella. Teen keikkoja erilaisiin tilaisuuksiin niin yksin sellolla soittaen kuin myös isompien kokoonpanojen kanssa. Onnistuvat kokoonpanot ovat muun muassa seuraavat ja aina voit esittää toiveita:\n' + 
-	'-html-\n'+
+	'Tervetuloa kotisivuilleni. Olen Vertti Viitasaari, 27-vuotias musiikkipedagogi ja sellisti Tampereella. Teen keikkoja erilaisiin tilaisuuksiin niin yksin sellolla soittaen kuin myös isompien kokoonpanojen kanssa. Onnistuvat kokoonpanot ovat muun muassa seuraavat ja aina voit esittää toiveita:\n' +
 	'<ul>' +
 	'<li>Selloduo</li>' + 
 	'<li>Sello ja piano</li>' + 
 	'<li>Jousitrio</li>' + 
 	'<li>Jousikvartetti</li>' + 
 	'</ul>\n' +
-	'-html-\n'+
 	'Ohjelmistoni/ohjelmistomme koostuu monipuolisesti rakastetuista klassisen ja kevyen musiikin kappaleista ja voit esittää myös mitä tahansa kappaletoiveita. Soittamaan voit pyytää minua kaikenlaisiin tilaisuuksiin aina häistä ja hautajaisista vuosijuhliin ja seminaaritilaisuuksien avauksiin. Keikoista laskutan Y-tunnuksellani.\n' + 
 	'Keikkailun lisäksi opetan sellon- ja pianonsoittoa. Valmistuin keväällä 2019 musiikkipedagogiksi Tampereen ammattikorkeakoulusta ja tarjoankin sello- ja pianotunteja Tampereen seudulla. Kuljen kohtuulliset välimatkat opetettavan luo polkupyörällä, mutta pääsääntöisesti opetan omakotitalossani Tampereen Pappilassa. Minulla on usean vuoden kokemus 6—65 -vuotiaiden ihmisten opettamisesta.\n' + 
 	'Soittotuntien hinta on 28 euroa 45 minuutilta ja pidemmissä soittotunneissa minuuttiveloitus pienenee suhteellisesti.\n' + 
 	'Hallitsen myös sähköbasson soiton ja olen vuodesta 2014 asti soittanut Hallava-nimisessä rock-bändissä (<a href="http://hallava.com" target="_blank">hallava.com</a>). Voin siis tehdä sijaistuskeikkaa rock-bändeissä. Akustisella kitaralla hallitsen lisäksi sujuvasti soinnuista säestämisen ja laulan vahvasti.',
 	en: 'Hi!\n' +
 	'And welcome to my website. I am Vertti Viitasaari, a 27 years old music educator and cellist from Tampere. You can ask me for a gig to various kinds of events. I can either come alone just with my cello or as a part of a larger assembly. You can request at least one of the following types of assemblies but I am always open to other suggestions as well:\n' +
-	'-html-\n'+
 	'<ul>' +
 	'<li>Cello duo</li>' + 
 	'<li>Cello and piano</li>' + 
 	'<li>String trio</li>' + 
 	'<li>String quartet</li>' + 
 	'</ul>\n' +
-	'-html-\n'+
 	'My/our repertoire is versatile, consisting of some of the most beloved classical pieces and pop songs but we are open to any suggestions as well. You can ask me to play in any kinds of events ranging from funerals to birthday parties and seminar opening ceremonies. Billing of the gigs will be sorted out using my business ID.\n' +
 	'I also offer cello and piano lessons in Tampere area. I teach at my home (a detached house) in Pappila, Tampere for the most of the time but I can also use a bicycle to get to the students if they are located at a reasonable distance. I have, in addition to my degree in Music Pedagogue (Tampere University of Applied Sciences, 2019), many years of experience in teaching people of all ages ranging from small children to elderly people.\n' +
 	'For cello and piano lessons I charge 28 euros per 45 minutes. If you want to have a longer session the per-minute rate will get smaller the longer the session is.\n' +
@@ -186,17 +184,8 @@ margin-right: 15px;
 	var parent = document.getElementById('teksti')
 	var paragraphs = content[language].split('\n')
 	var html = ''
-	var isRawHtml = false
 	paragraphs.forEach(function(p) {
-		if (p === '-html-') {
-			isRawHtml = !isRawHtml
-			return;
-		}
-		if (isRawHtml) {
-			html += p
-		} else {
-			html += '<p>' + p + '</p>'
-		}
+        html += '<p>' + p + '</p>'
 	})
 	parent.innerHTML = html
   }
