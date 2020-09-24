@@ -83,19 +83,19 @@ margin-right: 15px;
   var currentLang = 'fi'
 
   var vidLinks = [
-  'https://www.youtube.com/watch?v=ZQRxVT8fmzo',
-  'https://www.youtube.com/watch?v=P9gQWdLHtcg',
-  'https://www.youtube.com/watch?v=pUZ1coqSBAc',
-  'https://www.youtube.com/watch?v=HGYlTRTMThE',
-  'https://www.youtube.com/watch?v=5o6nybdaaow',
-  'https://www.youtube.com/watch?v=FQYmHveXOCM',
-  'https://www.youtube.com/watch?v=5aj_MreP944',
-  'https://www.youtube.com/watch?v=TsHgMeHFfpM',]
+  {key: 'quartet_sonore', link: 'https://www.youtube.com/watch?v=ZQRxVT8fmzo'},
+  {key: 'vv_starlight', link: 'https://www.youtube.com/watch?v=P9gQWdLHtcg'},
+  {key: 'duo_k_viva', link: 'https://www.youtube.com/watch?v=pUZ1coqSBAc'},
+  {key: 'duo_k_potc', link: 'https://www.youtube.com/watch?v=HGYlTRTMThE'},
+  {key: 'duo_k_miaseb', link: 'https://www.youtube.com/watch?v=5o6nybdaaow'},
+  {key: 'lilja_glazu', link: 'https://www.youtube.com/watch?v=FQYmHveXOCM'},
+  {key: 'lilja_prok', link: 'https://www.youtube.com/watch?v=5aj_MreP944'},
+  {key: 'klasarikonsertti', link: 'https://www.youtube.com/watch?v=TsHgMeHFfpM'},]
   // Replace the 'ytplayer' element with an <iframe> and
   // YouTube player after the API code downloads.
   var player;
   function onYouTubePlayerAPIReady() {
-	vidLinks.forEach(function(link, idx) {
+	vidLinks.forEach(function(linkObj, idx) {
 		var parent = document.createElement('div')
 		parent.style.display = 'inline-table'
 		parent.style.marginBottom = '15px'
@@ -108,10 +108,10 @@ margin-right: 15px;
 		player = new YT.Player('ytvid-' + idx, {
 		  height: ytVidDimensions.height,
 		  width: ytVidDimensions.width,
-		  videoId: link.replace(/.*=/g, '')
+		  videoId: linkObj.link.replace(/.*=/g, '')
 		});
 		var description = document.createElement('div')
-		description.setAttribute('data-t', 'link_' + idx)
+		description.setAttribute('data-t', 'link_' + linkObj.key)
 		description.style.height = '40px'
 		parent.appendChild(description)
 	})
@@ -122,17 +122,17 @@ margin-right: 15px;
   var t = {
 	otsikko: {fi: 'Sellisti Vertti Viitasaari', en: 'Cellist Vertti Viitasaari'},
 	vid: {fi: 'Videot', en: 'Videos'},
-    link_0: {fi: 'Quartet Sonore - esittelyvideo', en: 'Quartet Sonore - Introduction Video'},
-    link_1: {fi: 'V&V Project - Starlight (Muse Cover)', en: 'V&V Project - Starlight (Muse Cover)'},
-	link_2: {fi: 'Duo Kaasinen & Viitasaari soittamassa Coldplayn Viva la Vida -sovitusta 11/2018',
+    link_quartet_sonore: {fi: 'Quartet Sonore - esittelyvideo', en: 'Quartet Sonore - Introduction Video'},
+    link_vv_starlight: {fi: 'V&V Project - Starlight (Muse Cover)', en: 'V&V Project - Starlight (Muse Cover)'},
+	link_duo_k_viva: {fi: 'Duo Kaasinen & Viitasaari soittamassa Coldplayn Viva la Vida -sovitusta 11/2018',
 			 en: 'Duo Kaasinen & Viitasaari plays their version of Viva la Vida by Coldplay 11/2018'},
-    link_3: {fi: 'Duo Kaasinen & Viitasaari soittaa Pirates of the Caribbean -sovitusta 02/2020',
+    link_duo_k_potc: {fi: 'Duo Kaasinen & Viitasaari soittaa Pirates of the Caribbean -sovitusta 02/2020',
              en: 'Duo Kaasinen & Viitasaari plays their version of Pirates of the Caribbean 02/2020'},
-    link_4: {fi: 'Duo Kaasinen & Viitasaari soittaa Mia and Sebastian\'s -teeman sovitusta 02/2020',
+    link_duo_k_miaseb: {fi: 'Duo Kaasinen & Viitasaari soittaa Mia and Sebastian\'s -teeman sovitusta 02/2020',
              en: 'Duo Kaasinen & Viitasaari plays their version of Mia and Sebastian\'s Theme 02/2020'},
-	link_5: {fi: 'Jousitrio Lilja soittaa Glazunovia 08/2018', en: 'String trio Lilja plays Glazunov 08/2018'},
-	link_6: {fi: 'Jousitrio Lilja soittaa Prokofjevia 08/2018', en: 'String trio Lilja plays Prokofiev 08/2018'},
-	link_7: {fi: 'Klassisen musiikin konsertti Seinäjoen seurakuntatalossa 03/2019', en: 'Classical music concert at Seinäjoki Church community house 03/2019'},
+	link_lilja_glazu: {fi: 'Jousitrio Lilja soittaa Glazunovia 08/2018', en: 'String trio Lilja plays Glazunov 08/2018'},
+	link_lilja_prok: {fi: 'Jousitrio Lilja soittaa Prokofjevia 08/2018', en: 'String trio Lilja plays Prokofiev 08/2018'},
+	link_klasarikonsertti: {fi: 'Klassisen musiikin konsertti Seinäjoen seurakuntatalossa 03/2019', en: 'Classical music concert at Seinäjoki Church community house 03/2019'},
 	cv: {fi: 'CV', en: 'CV (in Finnish)'}
   }
   
