@@ -33,11 +33,22 @@ font-size: 22px;
 white-space: nowrap;
 }
 
-img {
-width: 80%;
-margin-left: 10%;
-max-height: 777px;
-max-width: 582px;
+.bio-pic-box {
+    width: 80%;
+    margin: auto;
+    max-height: 777px;
+    max-width: 582px;
+}
+
+.bio-pic-preview-box {
+    margin: auto;
+    width: fit-content;
+}
+
+.bio-pic-preview {
+    width: 60px;
+    cursor: pointer;
+    margin: 10px;
 }
 
 .content-box {
@@ -58,7 +69,14 @@ margin-right: 15px;
 <body>
 <div class="content">
 <div class="content-box left">
-<img src="vertti.jpg" />
+<div class="bio-pic-box">
+    <img id="bio-pic" src="vertti.jpg" />
+</div>
+<div class="bio-pic-preview-box">
+    <img class="bio-pic-preview" src="vertti.jpg" onclick="changePic('vertti.jpg')"/>
+    <img class="bio-pic-preview" src="sello.jpg" onclick="changePic('sello.jpg')"/>
+    <img class="bio-pic-preview" src="basso.jpg" onclick="changePic('basso.jpg')"/>
+</div>
 </div>
 <div class="content-box right">
 <a class="change-lang" href="javascript:void(0)" onclick="changeLanguage('en')">English</a>
@@ -156,6 +174,10 @@ margin-right: 15px;
 	document.title = t.otsikko[language]
   }
   
+  function changePic(pic) {
+    document.getElementById('bio-pic').src = pic
+  }
+
   var content = {
 	fi: 'Hei!\n' +
 	'Tervetuloa kotisivuilleni. Olen Vertti Viitasaari, 27-vuotias musiikkipedagogi ja sellisti Tampereella. Teen keikkoja erilaisiin tilaisuuksiin niin yksin sellolla soittaen kuin myös isompien kokoonpanojen kanssa. Onnistuvat kokoonpanot ovat muun muassa seuraavat ja aina voit esittää toiveita:\n' +
