@@ -22,3 +22,10 @@ function fillContent(language) {
     })
     parent.innerHTML = html
 }
+
+function initTranslator(lang) {
+    if (!window.translators)
+        translators = {}
+    translators[contentElement] = function (lang) { fillContent(lang) }
+    changeLanguage(lang)
+}
