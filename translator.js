@@ -13,7 +13,7 @@ function changeLanguage(language) {
     document.title = t.title[language]
 }
 
-function fillContent(language) {
+function fillContent(language, contentElement) {
     var parent = document.getElementById(contentElement)
     var paragraphs = content[language].split('\n')
     var html = ''
@@ -23,9 +23,11 @@ function fillContent(language) {
     parent.innerHTML = html
 }
 
-function initTranslator(lang) {
+function initTranslator(initialLang, contentElements) {
     if (!window.translators)
         translators = {}
-    translators[contentElement] = function (lang) { fillContent(lang) }
-    changeLanguage(lang)
+    contentElements.forEach(function (contentElement) {
+        translators[contentElement] = function (lang) { fillContent(lang, contentElement) }
+    })
+    changeLanguage(initialLang)
 }
