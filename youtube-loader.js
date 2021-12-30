@@ -30,4 +30,5 @@ function onYouTubePlayerAPIReady() {
         description.style.height = '40px'
         parent.appendChild(description)
     })
+    changeLanguage(currentLang)
 }
