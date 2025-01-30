@@ -18,6 +18,11 @@ function fillContent(language, contentElement) {
     var paragraphs = content[language].split('\n')
     var html = ''
     paragraphs.forEach(function (p) {
+        // Don't wrap HTML tags in paragraphs
+        if (p.startsWith('<')) {
+            html += p
+            return
+        }
         html += '<p>' + p + '</p>'
     })
     parent.innerHTML = html

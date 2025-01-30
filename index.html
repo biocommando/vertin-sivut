@@ -53,9 +53,9 @@
   <script src="gallery.js"></script>
   <script>
     var vidLinks = [
+      { key: 'cellist_vv', link: 'https://www.youtube.com/watch?v=RWV7MRgRw5E' },
       { key: 'klasarikonsertti', link: 'https://www.youtube.com/watch?v=TsHgMeHFfpM' },
       { key: 'quartet_sonore', link: 'https://www.youtube.com/watch?v=8KxCvpH1u1k' },
-      { key: 'hallava_hedelma', link: 'https://www.youtube.com/watch?v=2iFyQOXrma4' },
       { key: 'duo_k_potc', link: 'https://www.youtube.com/watch?v=HGYlTRTMThE' },
       { key: 'duo_k_miaseb', link: 'https://www.youtube.com/watch?v=5o6nybdaaow' },
       { key: 'vv_youknowmyname', link: 'https://www.youtube.com/watch?v=e0AU-FYphNA' },
@@ -67,9 +67,9 @@
       link_quartet_sonore: { fi: 'Quartet Sonore - kappalepotpuri', en: 'Quartet Sonore - Medley' },
       link_vv_starlight: { fi: 'V&V Project - Starlight (Muse Cover)', en: 'V&V Project - Starlight (Muse Cover)' },
       link_vv_youknowmyname: { fi: 'V&V Project - You Know My Name (Chris Cornell Cover)', en: 'V&V Project - You Know My Name (Chris Cornell Cover)' },
-      link_hallava_hedelma: {
-        fi: 'Hallava - Hedelmä (virallinen musiikkivideo)',
-        en: 'Hallava - Hedelmä (Official Music Video)'
+      link_cellist_vv: {
+        fi: 'Sellisti Vertti Viitasaari - esittelyvideo',
+        en: 'Cellist Vertti Viitasaari - Introductory Video'
       },
       link_duo_k_potc: {
         fi: 'Duo Kaasinen & Viitasaari soittaa Pirates of the Caribbean -sovitusta 02/2020',
@@ -87,28 +87,30 @@
     }
 
     var content = {
-      fi: 'Hei!\n' +
-        'Tervetuloa kotisivuilleni. Olen Vertti Viitasaari, sellisti ja musiikkipedagogi Tampereella. Teen keikkoja erilaisiin tilaisuuksiin niin yksin sellolla soittaen kuin myös isompien kokoonpanojen kanssa. Onnistuvat kokoonpanot ovat muun muassa seuraavat ja aina voit esittää toiveita:\n' +
-        '<ul>' +
-        '<li>Selloduo</li>' +
-        '<li>Sello ja piano</li>' +
-        '<li>Jousitrio</li>' +
-        '<li>Jousikvartetti</li>' +
-        '</ul>\n' +
-        'Ohjelmistoni/ohjelmistomme koostuu monipuolisesti rakastetuista klassisen ja kevyen musiikin kappaleista ja voit esittää myös mitä tahansa kappaletoiveita. Soittamaan voit pyytää minua kaikenlaisiin tilaisuuksiin aina häistä ja hautajaisista vuosijuhliin ja seminaaritilaisuuksien avauksiin. Keikoista laskutan Y-tunnuksellani.\n' +
-        'Hallitsen myös sähköbasson ja pianon soiton ja olen vuodesta 2014 asti soittanut Hallava-nimisessä rock-bändissä (<a href="http://hallava.com" target="_blank">hallava.com</a>). Voin siis tehdä sijaistuskeikkaa rock-bändeissä. Akustisella kitaralla hallitsen lisäksi sujuvasti soinnuista säestämisen ja laulan vahvasti.\n'+
-        'Tarjoan myös sello- ja pianotunteja kotonani Tampereen Pappilassa. Sellotuntien hinta on 44 euroa 45 minuutilta ja 55 euroa 60 minuutilta. Pianotunnit kustantavat 39 euroa 45 minuutilta ja 50 euroa 60 minuutilta.',
-      en: 'Hi!\n' +
-        'And welcome to my website. I am Vertti Viitasaari, a cellist and music educator from Tampere. You can ask me for a gig to various kinds of events. I can either come alone just with my cello or as a part of a larger assembly. You can request at least one of the following types of assemblies but I am always open to other suggestions as well:\n' +
-        '<ul>' +
-        '<li>Cello duo</li>' +
-        '<li>Cello and piano</li>' +
-        '<li>String trio</li>' +
-        '<li>String quartet</li>' +
-        '</ul>\n' +
-        'My/our repertoire is versatile, consisting of some of the most beloved classical pieces and pop songs but we are open to any suggestions as well. You can ask me to play in any kinds of events ranging from funerals to birthday parties and seminar opening ceremonies. Billing of the gigs will be sorted out using my business ID.\n' +
-        'I also play electric bass and piano. I also have been playing in a rock band called Hallava (<a href="http://hallava.com" target="_blank">hallava.com</a>) since 2014. I can also accompany with acoustic guitar and I sing powerfully.\n' +
-        'I also offer cello and piano lessons at my house in Tampere, Pappila. Pricing for the cello lessons is 44 euros for 45 minutes and 55 euros for 60 minutes. Piano lessons cost 39 euros for 45 minutes and 50 euros for 60 minutes.'
+      fi: `Hei!
+Tervetuloa kotisivuilleni. Olen Vertti Viitasaari, sellisti ja musiikkipedagogi Tampereella. Teen keikkoja erilaisiin tilaisuuksiin niin yksin sellolla soittaen kuin myös isompien kokoonpanojen kanssa. Onnistuvat kokoonpanot ovat muun muassa seuraavat ja aina voit esittää toiveita:
+<ul>
+<li>Selloduo</li>
+<li>Sello ja piano</li>
+<li>Jousitrio</li>
+<li>Jousikvartetti</li>
+</ul>
+Ohjelmistoni/ohjelmistomme koostuu monipuolisesti rakastetuista klassisen ja kevyen musiikin kappaleista ja voit esittää myös mitä tahansa kappaletoiveita. Soittamaan voit pyytää minua kaikenlaisiin tilaisuuksiin aina häistä ja hautajaisista vuosijuhliin ja seminaaritilaisuuksien avauksiin. Teen keikkoja ympäri Suomea sopimuksen mukaan ja laskutan niistä Y-tunnuksellani.
+Hallitsen lisäksi pianon, sähköbasson ja kitaran soiton. Minua voikin pyytää keikoille erilaisiin kokoonpanoihin sijaistamaan.
+Tarjoan myös sello- ja pianotunteja kotonani Tampereen Pappilassa. Sellotuntien hinta on 32 euroa 30 minuutilta, 44 euroa 45 minuutilta ja 55 euroa 60 minuutilta. Pianotunnit kustantavat 28 euroa 30 minuutilta, 39 euroa 45 minuutilta ja 50 euroa 60 minuutilta.
+Sopimuksen mukaan tarjoan opetusta myös bändisoittimien soiton ja musiikin teorian alkeissa.`,
+      en: `Hi!
+Welcome to my website. I am Vertti Viitasaari, a cellist and music educator in Tampere. I perform at various events both as a solo cellist and with larger ensembles. Some possible ensembles include the following, but you are always welcome to make requests:
+<ul>
+<li>Cello duo</li>
+<li>Cello and piano</li>
+<li>String trio</li>
+<li>String quartet</li>
+</ul>
+My repertoire consists of a wide variety of beloved classical and pop music pieces, and you can also request any specific songs. You can invite me to perform at all kinds of events, from weddings and funerals to anniversary celebrations and seminar openings. For gigs, I issue invoices using my business ID.
+In addition, I play piano, electric bass, and guitar. You can also ask me to substitute in different ensembles for various performances.
+I also offer cello and piano lessons at my home in Pappila, Tampere. The price for cello lessons is 32 euros for 30 minutes, 44 euros for 45 minutes, and 55 euros for 60 minutes. Piano lessons cost 28 euros for 30 minutes, 39 euros for 45 minutes, and 50 euros for 60 minutes.
+By agreement, I also offer beginner lessons for band instruments and music theory.`
       }
 
     initTranslator('fi', ['teksti'])
